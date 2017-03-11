@@ -27,5 +27,22 @@ namespace FuckOff
             AboutPage aboutPage = new AboutPage(aboutViewModel);
             await Navigation.PushAsync(aboutPage);
         }
+
+        public async void OnSettingsToolbarItemClicked(object sender, EventArgs args)
+        {
+            await ShowSettingsPage();
+        }
+
+        private Task ShowSettingsPage()
+        {
+            SettingsPageViewModel settingsViewModel = new SettingsPageViewModel(this.service.Settings, Return);
+            SettingsPage settingsPage = new SettingsPage(settingsViewModel);
+            return Navigation.PushAsync(settingsPage);
+        }
+
+        public async void Return()
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

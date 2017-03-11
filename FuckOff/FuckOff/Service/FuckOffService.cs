@@ -12,9 +12,10 @@ namespace FuckOff
     {
         string APIName { get; }
         string APIVersion { get; }
-        int FuckOffCounter { get;}
-        string ProjectName { get;}
+        int FuckOffCounter { get; }
+        string ProjectName { get; }
         string ProjectVersion { get; }
+        IFuckOffSettings Settings { get; }
     }
 
     public class FuckOffService : IFuckOffService
