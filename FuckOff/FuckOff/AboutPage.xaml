@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FuckOff.AboutPage">
+
+  <ContentPage.Content>
+    <Grid x:Name="aboutPageGrid" RowSpacing="1" ColumnSpacing="3">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Label
+        Text="Project: "
+        Grid.Row="0"
+        Grid.Column="0" />
+      <Label
+        Text="{Binding ProjectName}"
+        Grid.Row="0"
+        Grid.Column="1" />
+
+      <Label
+        Text="Version:"
+        Grid.Row="1"
+        Grid.Column="0" />
+      <Label
+        Text="{Binding ProjectVersion}"
+        Grid.Row="1"
+        Grid.Column="1" />
+
+      <Label
+        Text="API:"
+        Grid.Row="2"
+        Grid.Column="0" />
+      <Label
+        Text="{Binding APIName}"
+        Grid.Row="2"
+        Grid.Column="1" />
+
+      <Label
+        Text="API Version:"
+        
+        Grid.Row="3"
+        Grid.Column="0" />
+      <Label
+        Text="{Binding APIVersion}"
+        Grid.Row="3"
+        Grid.Column="1" />
+
+      <Label
+        Text="Fuckoffs given:"
+        Grid.Row="4"
+        Grid.Column="0" />
+      <Label
+        Text="{Binding NrOfFuckoffs}"
+        Grid.Row="4"
+        Grid.Column="1" />
+      
+    </Grid>  
+  </ContentPage.Content>
+  
+</ContentPage>
