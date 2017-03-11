@@ -8,6 +8,7 @@ namespace FuckOff
     {
         private IFuckOffSettings settings;
         private string userName;
+        private string fuckoffCounter;
         private Action Close;
         private Command saveAndCloseCommand;
         public ICommand SaveAndCloseCommand
@@ -24,6 +25,21 @@ namespace FuckOff
                 return saveAndCloseCommand;
             }
         }
+        private Command resetFuckoffCounterCommand;
+        public ICommand ResetFuckoffCounterCommand
+        {
+            get
+            {
+                if (resetFuckoffCounterCommand == null)
+                {
+                    resetFuckoffCounterCommand = new Command(
+                        execute: () => { FuckoffCounter = "0"; settings.FuckOffCounter = 0; },
+                        canExecute: ()=> { return settings.FuckOffCounter > 0; }
+                        );
+                }
+                return resetFuckoffCounterCommand;
+            }
+        }
         public string UserName
         {
             set
@@ -36,12 +52,26 @@ namespace FuckOff
                 return userName;
             }
         }
+        public string FuckoffCounter
+        {
+            private set
+            {
+                SetProperty(ref fuckoffCounter, value);
+                RefreshCanExecutes();
+            }
+            get
+            {
+                return fuckoffCounter;
+            }
+        }
+
 
         public SettingsPageViewModel(IFuckOffSettings settings, Action close)
         {
             this.settings = settings;
             this.userName = settings.UserName;
             this.UserName = settings.UserName;
+            this.FuckoffCounter = settings.FuckOffCounter.ToString();
             this.Close = close;
         }
         

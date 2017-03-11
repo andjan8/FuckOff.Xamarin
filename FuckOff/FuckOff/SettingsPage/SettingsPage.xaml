@@ -12,10 +12,15 @@
           <RowDefinition Height="Auto" />
           <RowDefinition Height="Auto" />
           <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
           <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
         <Label
@@ -25,14 +30,36 @@
 
         <Entry
           Text="{Binding UserName}"
+          Grid.Row="0"
+          Grid.Column="1"
+          Grid.ColumnSpan="2"/>
+
+        <Label
+        Text="Fuckoff counter:"
+        Grid.Row="1"
+        Grid.Column="0"/>
+
+        <Label
+        Text="{Binding FuckoffCounter}"
+        Grid.Row="1"
+        Grid.Column="1"/>
+
+        <Button 
+          Text="Reset Counter"
           Grid.Row="1"
-          Grid.Column="0" />
+          Grid.Column="3"
+          Command="{Binding ResetFuckoffCounterCommand}"/>
+
+
 
         <Button
           Text="Save and Close"
           Command="{Binding SaveAndCloseCommand}"
-          Grid.Row="2"
-          Grid.Column="0"/>
+          Grid.Row="3"
+          Grid.Column="0"
+          Grid.ColumnSpan="4"/>
+    
+      
 
           
         

@@ -15,13 +15,13 @@ namespace FuckOff
         int FuckOffCounter { get; }
         string ProjectName { get; }
         string ProjectVersion { get; }
-        IFuckOffSettings Settings { get; }
+        IFuckOffSettings Settings { get; set; }
     }
 
     public class FuckOffService : IFuckOffService
     {
         private IFuckOffSettings settings;
-        public IFuckOffSettings Settings { get { return this.settings; } }
+        public IFuckOffSettings Settings { get { return this.settings; } set { this.settings = value; } }
 
         public string APIName
         {
@@ -43,7 +43,7 @@ namespace FuckOff
         {
             get
             {
-                return 1234;
+                return this.Settings.FuckOffCounter;
             }
         }
 
