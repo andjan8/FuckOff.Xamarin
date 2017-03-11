@@ -10,7 +10,7 @@ namespace FuckOff
 {
     public partial class MainPage : ContentPage
     {
-        private IFuckOffService service;
+        private FuckOffService service;
         
         public MainPage(MainPageViewModel viewModel)
         {

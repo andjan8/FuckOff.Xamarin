@@ -1,43 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FuckOff
 {
-    public interface IFuckOffService
+    public class FuckOffService 
     {
-        string APIName { get; }
-        string APIVersion { get; }
-        int FuckOffCounter { get; }
-        string ProjectName { get; }
-        string ProjectVersion { get; }
-        IFuckOffSettings Settings { get; set; }
-    }
+        private FuckOffSettings settings;
+        private FoaasAPI foaas;
 
-    public class FuckOffService : IFuckOffService
-    {
-        private IFuckOffSettings settings;
-        public IFuckOffSettings Settings { get { return this.settings; } set { this.settings = value; } }
+        public FuckOffSettings Settings { get { return this.settings; } set { this.settings = value; } }
 
         public string APIName
         {
             get
             {
-                return "THIS IS THE NAME OF THE API";
+                return foaas.BaseUrl;
             }
         }
 
-        public string APIVersion
-        {
-            get
-            {
-                return "This is the api version";
-            }
-        }
+        public string APIVersion { get; private set; }
+         
 
         public int FuckOffCounter
         {
@@ -65,9 +48,19 @@ namespace FuckOff
             }
         }
 
-        public FuckOffService(IFuckOffSettings settings)
+        public async Task<string> GetRandomFuckOff()
+        {
+            return await foaas.GetRandomFuckOffMessage();
+        }
+
+        
+
+        public FuckOffService(FuckOffSettings settings, FoaasAPI foaas)
         {
             this.settings = settings;
+            this.foaas = foaas;
+           // Task<string> t = foaas.GetVersionNumber();
+           // this.APIVersion = t.Result;
         }
     }
 

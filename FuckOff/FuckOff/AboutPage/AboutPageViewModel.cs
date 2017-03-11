@@ -43,9 +43,9 @@ namespace FuckOff
         string apiName;
         string projectVersion;
         string projectName;
-        private IFuckOffService service;
+        private FuckOffService service;
                 
-        public AboutPageViewModel(IFuckOffService service)
+        public AboutPageViewModel(FuckOffService service)
         {
 
             this.nrOfFuckoffs = service.FuckOffCounter.ToString();

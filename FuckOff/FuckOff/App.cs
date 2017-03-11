@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using FuckOff.Service;
 namespace FuckOff
 {
     public class App : Application
     {
 
         MainPage mainPage;
-        IFuckOffService fuckOffService;
+        FuckOffService fuckOffService;
 
         public App()
         {
-            fuckOffService = new FuckOffService(new FuckOffSettings());
+
+            fuckOffService = new FuckOffService(new FuckOffSettings(), new FoaasAPI(new WebRequestWrapper(), "anja"));
             mainPage = new MainPage(new MainPageViewModel(fuckOffService));
             MainPage = new NavigationPage(mainPage);
         }

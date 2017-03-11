@@ -6,7 +6,7 @@ namespace FuckOff
 {
     public class SettingsPageViewModel : ViewModelBase
     {
-        private IFuckOffSettings settings;
+        private FuckOffSettings settings;
         private string userName;
         private string fuckoffCounter;
         private Action Close;
@@ -69,7 +69,7 @@ namespace FuckOff
         }
 
 
-        public SettingsPageViewModel(IFuckOffSettings settings, Action close)
+        public SettingsPageViewModel(FuckOffSettings settings, Action close)
         {
             this.settings = settings;
             this.userName = settings.UserName;

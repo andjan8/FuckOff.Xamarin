@@ -9,9 +9,9 @@ namespace FuckOff
         const string userName = "UserName";
         const string fuckOffCounter = "FuckOffCounter";
 
-        internal static IFuckOffSettings RetrieveSettings(IDictionary<string, object> properties)
+        internal static FuckOffSettings RetrieveSettings(IDictionary<string, object> properties)
         {
-            IFuckOffSettings settings = new FuckOffSettings();
+            FuckOffSettings settings = new FuckOffSettings();
             settings.UserName = GetStringProperty(properties, userName);
             settings.FuckOffCounter = GetIntProperty(properties, fuckOffCounter);
             return settings;
@@ -27,7 +27,7 @@ namespace FuckOff
             return properties.ContainsKey(propertyName) && !string.IsNullOrEmpty((string)properties[propertyName]) ? (string)properties[propertyName] : string.Empty;
         }
 
-        internal static void SaveSettings(IFuckOffSettings settings, IDictionary<string, object> properties, Func<Task> savePropertiesAsync)
+        internal static void SaveSettings(FuckOffSettings settings, IDictionary<string, object> properties, Func<Task> savePropertiesAsync)
         {
             properties[userName] = settings.UserName;
             properties[fuckOffCounter] = settings.FuckOffCounter;
