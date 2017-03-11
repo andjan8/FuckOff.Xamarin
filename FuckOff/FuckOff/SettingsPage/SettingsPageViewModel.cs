@@ -33,7 +33,10 @@ namespace FuckOff
                 if (resetFuckoffCounterCommand == null)
                 {
                     resetFuckoffCounterCommand = new Command(
-                        execute: () => { FuckoffCounter = "0"; settings.FuckOffCounter = 0; },
+                        execute: () => {
+                            FuckoffCounter = "0";
+                            settings.FuckOffCounter = 0;
+                            RefreshCanExecutes(); },
                         canExecute: ()=> { return settings.FuckOffCounter > 0; }
                         );
                 }
@@ -94,6 +97,7 @@ namespace FuckOff
         public void RefreshCanExecutes()
         {
             ((Command)SaveAndCloseCommand).ChangeCanExecute();
+            ((Command)ResetFuckoffCounterCommand).ChangeCanExecute();
         }
 
 

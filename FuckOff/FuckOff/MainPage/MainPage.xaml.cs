@@ -11,7 +11,6 @@ namespace FuckOff
     public partial class MainPage : ContentPage
     {
         private IFuckOffService service;
-
         
         public MainPage(MainPageViewModel viewModel)
         {
@@ -22,7 +21,6 @@ namespace FuckOff
 
         public async void OnAboutToolbarItemClicked(object sender, EventArgs args)
         {
-
             AboutPageViewModel aboutViewModel = new AboutPageViewModel(this.service);
             AboutPage aboutPage = new AboutPage(aboutViewModel);
             await Navigation.PushAsync(aboutPage);
