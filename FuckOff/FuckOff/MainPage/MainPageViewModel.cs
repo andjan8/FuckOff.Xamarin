@@ -65,6 +65,8 @@ namespace FuckOff
         {
             this.fuckOffService = fuckOffService;
             RefreshCanExecutes();
+            //This is only for testing, will be removed once the gui is done
+            //this.FuckOffText= "I am a very long insult consisting mostly of random words and stuff. Also fuck you because you are one very ugly motherfucker and i hate your guts. You suck and are stupid and if you died today i would not be sad at all. Well maybe a little because I would probably miss hating you so much.";
         }
 
         private async void OnFuckOffCommandClick()
