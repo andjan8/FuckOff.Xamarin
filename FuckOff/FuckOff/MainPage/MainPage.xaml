@@ -15,7 +15,7 @@
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
 
-    <!--<Grid x:Name="mainGrid">
+   <Grid x:Name="mainGrid">
       <Grid.RowDefinitions>
         <RowDefinition Height="*"/>
         <RowDefinition Height="*"/>
@@ -23,9 +23,9 @@
 
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"/>
-      </Grid.ColumnDefinitions>-->
+      </Grid.ColumnDefinitions>
 
-    <!--<Grid x:Name="verticalGrid" RowSpacing="5" ColumnSpacing="5" Grid.Row="0" Grid.Column="0">
+    <Grid x:Name="verticalGrid" RowSpacing="5" ColumnSpacing="5" Grid.Row="0" Grid.Column="0">
       <Grid.RowDefinitions>
         <RowDefinition Height="160" />
         <RowDefinition Height="Auto" />
@@ -78,11 +78,11 @@
         Grid.Column="1"
         Grid.ColumnSpan="2"/>
 
-    </Grid>-->
+    </Grid>
 
 
 
-    <Grid x:Name="horizontalGrid" RowSpacing="5" ColumnSpacing="5">
+    <Grid x:Name="horizontalGrid" RowSpacing="5" ColumnSpacing="5" Grid.Row="1" Grid.Column="0">
       <Grid.RowDefinitions>
         <RowDefinition Height="160" />
         <RowDefinition Height="*" />
@@ -143,6 +143,6 @@
       </ContentView>
 
     </Grid>
-    <!--</Grid>-->
+    </Grid>
   </ContentPage.Content>
 </ContentPage>

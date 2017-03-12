@@ -47,23 +47,23 @@ namespace FuckOff
             this.service.Settings = this.service.Settings;
         }
 
-        //protected override void OnSizeAllocated(double width, double height)
-        //{
-        //    base.OnSizeAllocated(width, height);
-        //    Orientation orientation = width > height ? Orientation.Landscape : Orientation.Portrait;
-        //    SetUpPage(orientation);
-            
-        //}
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            Orientation orientation = width > height ? Orientation.Landscape : Orientation.Portrait;
+            SetUpPage(orientation);
 
-        //private void SetUpPage(Orientation orientation)
-        //{
-        //    verticalGrid.IsVisible = orientation == Orientation.Portrait;
-        //    horizontalGrid.IsVisible = orientation == Orientation.Landscape;
-        //    mainGrid.RowDefinitions[0].Height = orientation == Orientation.Portrait ? GridLength.Star : 0;
-        //    mainGrid.RowDefinitions[1].Height = orientation == Orientation.Landscape ? GridLength.Star : 0;
-        //    mainGrid.ColumnDefinitions[0].Width = GridLength.Star;
+        }
+
+        private void SetUpPage(Orientation orientation)
+        {
+            verticalGrid.IsVisible = orientation == Orientation.Portrait;
+            horizontalGrid.IsVisible = orientation == Orientation.Landscape;
+            mainGrid.RowDefinitions[0].Height = orientation == Orientation.Portrait ? GridLength.Star : 0;
+            mainGrid.RowDefinitions[1].Height = orientation == Orientation.Landscape ? GridLength.Star : 0;
+            mainGrid.ColumnDefinitions[0].Width = GridLength.Star;
 
 
-        //}
+        }
     }
 }
