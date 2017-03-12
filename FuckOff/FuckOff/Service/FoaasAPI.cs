@@ -12,6 +12,7 @@ namespace FuckOff
         private WebRequestWrapper requestWrapper;
         private Dictionary<string, string> requestDictionary;
         private string user;
+        public string FuckOffRecipient { get { return user; } set { user = value; } }
 
         public string BaseUrl { get { return "http://foaas.com"; } }
 
