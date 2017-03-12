@@ -12,6 +12,8 @@
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
         <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
 
@@ -20,51 +22,78 @@
         <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>
 
+      <ContentView Padding="0,10,0,20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <Label
+         Text="FuckOff the App: Tells people what they need to hear."
+         FontSize="Large"
+         FontAttributes="Bold"/>
+      </ContentView>
+
+      <ContentView Padding="0,0,0,40" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+      <Label
+       Text="This app is a great way to treat yourself or someone you care about to a well deserved fuck off.
+It's using the best API in the world: Fuck Off As A Service, to generate fuckoffs that cover most instances of your everyday life. 
+From just telling that noisy coworker to shut the hell up, to utterly destorying your former significant other in case of a breakup. And everything in between! 
+This is free as in free beer. But I would like to share beers if you have any."
+       FontSize="Medium"
+       HorizontalTextAlignment="Start"/>
+      </ContentView>
+      
       <Label
         Text="Project: "
-        Grid.Row="0"
-        Grid.Column="0" />
+        Grid.Row="2"
+        Grid.Column="0" 
+        FontSize="Small"/>
       <Label
         Text="{Binding ProjectName}"
-        Grid.Row="0"
-        Grid.Column="1" />
+        Grid.Row="2"
+        Grid.Column="1" 
+        FontSize="Small"/>
 
       <Label
         Text="Version:"
-        Grid.Row="1"
-        Grid.Column="0" />
+        Grid.Row="3"
+        Grid.Column="0" 
+        FontSize="Small"/>
       <Label
         Text="{Binding ProjectVersion}"
-        Grid.Row="1"
-        Grid.Column="1" />
+        Grid.Row="3"
+        Grid.Column="1" 
+        FontSize="Small"/>
 
       <Label
         Text="API:"
-        Grid.Row="2"
-        Grid.Column="0" />
+        Grid.Row="4"
+        Grid.Column="0" 
+        FontSize="Small"/>
       <Label
         Text="{Binding APIName}"
-        Grid.Row="2"
-        Grid.Column="1" />
+        Grid.Row="4"
+        Grid.Column="1" 
+        FontSize="Small"/>
 
       <Label
         Text="API Version:"
         
-        Grid.Row="3"
-        Grid.Column="0" />
+        Grid.Row="5"
+        Grid.Column="0"
+        FontSize="Small"/>
       <Label
         Text="{Binding APIVersion}"
-        Grid.Row="3"
-        Grid.Column="1" />
+        Grid.Row="5"
+        Grid.Column="1"
+        FontSize="Small"/>
 
       <Label
         Text="Fuckoffs given:"
-        Grid.Row="4"
-        Grid.Column="0" />
+        Grid.Row="6"
+        Grid.Column="0"
+        FontSize="Small"/>
       <Label
         Text="{Binding NrOfFuckoffs}"
-        Grid.Row="4"
-        Grid.Column="1" />
+        Grid.Row="6"
+        Grid.Column="1"
+        FontSize="Small"/>
       
     </Grid>  
   </ContentPage.Content>
