@@ -80,5 +80,7 @@ namespace FuckOff
             ((Command)FuckOffCommand).ChangeCanExecute();
             ((Command)ShareCommand).ChangeCanExecute();
         }
+
+        
     }
 }

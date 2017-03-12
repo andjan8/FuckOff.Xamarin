@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:FuckOff"
              x:Class="FuckOff.MainPage"
              Title="Fuck Off">
- 
+
   <ContentPage.ToolbarItems>
     <ToolbarItem Text="About"
                Order="Secondary"
@@ -15,7 +15,17 @@
   </ContentPage.ToolbarItems>
   <ContentPage.Content>
 
-    <Grid x:Name="mainPageGrid" RowSpacing="5" ColumnSpacing="5">
+    <!--<Grid x:Name="mainGrid">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>-->
+
+    <!--<Grid x:Name="verticalGrid" RowSpacing="5" ColumnSpacing="5" Grid.Row="0" Grid.Column="0">
       <Grid.RowDefinitions>
         <RowDefinition Height="160" />
         <RowDefinition Height="Auto" />
@@ -68,6 +78,71 @@
         Grid.Column="1"
         Grid.ColumnSpan="2"/>
 
+    </Grid>-->
+
+
+
+    <Grid x:Name="horizontalGrid" RowSpacing="5" ColumnSpacing="5">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="160" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="240" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <Image Source="{local:ImageResource FuckOff.Images.old_man.jpg}"
+          BackgroundColor="White"
+          Grid.Row="0"
+          Grid.Column="0"/>
+
+      <ContentView Padding="20,10,20,0" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+        <Label
+         Text="{Binding FuckOffText}"
+         HorizontalTextAlignment="Start"
+         FontSize="Medium"/>
+      </ContentView>
+
+      <ContentView Grid.Column="3" Grid.Row="0" Padding="0,10,20,0">
+        <Grid x:Name="horizontalButtonGrid">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+
+          <Button
+          Text="Receive random insult"
+            Grid.Row="0"
+               Grid.Column="0"
+              Command="{Binding FuckOffCommand}" />
+
+          <Button
+            Text="Give a fuck"
+            Grid.Row="1"
+            Grid.Column="0"
+            Command="{Binding ShareCommand}" />
+        </Grid>
+      </ContentView>
+
+      <ContentView Grid.Row="2"        Grid.Column="2"        Grid.ColumnSpan="2" Padding="0,0,20,0">
+        <Label
+          Text="Fuck off and die. ZombieConsulting 2017"
+          VerticalTextAlignment="End"
+          HorizontalTextAlignment="End"
+          FontSize="Micro"/>
+      </ContentView>
+
     </Grid>
+    <!--</Grid>-->
   </ContentPage.Content>
 </ContentPage>
