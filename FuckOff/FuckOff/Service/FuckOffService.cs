@@ -59,8 +59,8 @@ namespace FuckOff
         {
             this.settings = settings;
             this.foaas = foaas;
-           // Task<string> t = foaas.GetVersionNumber();
-           // this.APIVersion = t.Result;
+            Task<string> t = foaas.GetVersionNumber();
+            t.ContinueWith(a => this.APIVersion = t.Result);
         }
     }
 
