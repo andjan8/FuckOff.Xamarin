@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -43,12 +44,18 @@ namespace FuckOff.Service
         }
 
         public FuckOffMessage ParseJson(string json)
-        {//"\"{\"message\":\"Version 1.1.0\",\"subtitle\":\"FOAAS\"}\""
+        {
             FuckOffMessage message = new FuckOffMessage();
+            JObject obj = JObject.Parse(json);
+            message.Message  = obj["message"].Value<string>();
+            message.Subtitle = obj["subtitle"].Value<string>();
+            
+            //"\"{\"message\":\"Version 1.1.0\",\"subtitle\":\"FOAAS\"}\""
+            
 
-            string[] parts = json.Split(':');
-            message.Message = parts[1].Split(',')[0].Replace("\"","");
-            message.Subtitle = parts[2].Replace("}","").Replace("\"","");
+            //string[] parts = json.Split(':');
+            //message.Message = parts[1].Split(',')[0].Replace("\"","");
+            //message.Subtitle = parts[2].Replace("}","").Replace("\"","");
             return message;
         }
     }

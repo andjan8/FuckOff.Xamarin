@@ -36,7 +36,7 @@ namespace FuckOff.Tests
         [TestMethod]
         public void CanParseJson()
         {
-            FuckOffMessage message = rest.ParseJson("\"{\"message\":\"Version 1.1.0\",\"subtitle\":\"FOAAS\"}\"");
+            FuckOffMessage message = rest.ParseJson("{\"message\":\"Version 1.1.0\",\"subtitle\":\"FOAAS\"}");
             Assert.AreEqual("Version 1.1.0", message.Message);
             Assert.AreEqual("FOAAS", message.Subtitle);
 
