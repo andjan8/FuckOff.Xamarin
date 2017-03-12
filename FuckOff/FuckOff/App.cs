@@ -24,6 +24,10 @@ namespace FuckOff
         protected override void OnStart()
         {
             fuckOffService.Settings = PropertyHandler.RetrieveSettings(this.Properties);
+            if (fuckOffService.Settings.UserName == new FuckOffSettings().UserName)
+            {
+                App.Current.MainPage.DisplayAlert("First Use", "You need to configure a user name in order to get personalized fuck off messages. Go to the settings page and enter a name of your choosing.", "OK");
+            }
         }
         
         protected override void OnResume()

@@ -32,7 +32,7 @@ namespace FuckOff
             await ShowSettingsPage();
         }
 
-        private Task ShowSettingsPage()
+        public Task ShowSettingsPage()
         {
             SettingsPageViewModel settingsViewModel = new SettingsPageViewModel(this.service.Settings, Return);
             SettingsPage settingsPage = new SettingsPage(settingsViewModel);
