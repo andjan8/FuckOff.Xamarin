@@ -8,6 +8,20 @@ namespace FuckOff
     {
         private FuckOffService fuckOffService;
         public FuckOffService AppService { get { return this.fuckOffService; } }
+
+        private string fuckOffText;
+        public string FuckOffText
+        {
+            private set
+            {
+                SetProperty(ref fuckOffText, value);
+            }
+            get
+            {
+                return fuckOffText;
+            }
+        }
+
         private Command fuckOffCommand;
         public ICommand FuckOffCommand
         {
@@ -28,27 +42,41 @@ namespace FuckOff
             }
         }
 
+        private Command shareCommand;
+        public ICommand ShareCommand
+        {
+            get
+            {
+                if (shareCommand == null)
+                {
+                    shareCommand = new Command(
+                        execute: () =>
+                        {
+
+                        },
+                        canExecute: () => { return false; });
+
+                }
+                return shareCommand;
+            }
+        }
+        
+        public MainPageViewModel(FuckOffService fuckOffService)
+        {
+            this.fuckOffService = fuckOffService;
+            RefreshCanExecutes();
+        }
+
         private async void OnFuckOffCommandClick()
         {
             FuckOffText = await AppService.GetRandomFuckOff();
             fuckOffService.Settings.FuckOffCounter++;
         }
 
-        private string fuckOffText;
-        public string FuckOffText
+        public void RefreshCanExecutes()
         {
-            private set
-            {
-                SetProperty(ref fuckOffText, value);
-            }
-            get
-            {
-                return fuckOffText;
-            }
-        }
-        public MainPageViewModel(FuckOffService fuckOffService)
-        {
-            this.fuckOffService = fuckOffService;
+            ((Command)FuckOffCommand).ChangeCanExecute();
+            ((Command)ShareCommand).ChangeCanExecute();
         }
     }
 }

@@ -19,6 +19,7 @@
         <RowDefinition Height="*" />
         <RowDefinition Height="Auto" />
         <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
         <RowDefinition Height="*" />
 
       </Grid.RowDefinitions>
@@ -37,10 +38,16 @@
         Grid.RowSpan="2"/>
         
       <Button
-        Text="Fuck Off!"
+        Text="Receive random insult"
           Grid.Row="2"
              Grid.Column="1"
             Command="{Binding FuckOffCommand}" />
+
+      <Button
+        Text="Give a fuck"
+        Grid.Row="3"
+        Grid.Column="1"
+        Command="{Binding ShareCommand}" />
 
     </Grid>
   </ContentPage.Content>
