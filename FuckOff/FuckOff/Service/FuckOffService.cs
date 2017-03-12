@@ -9,7 +9,18 @@ namespace FuckOff
         private FuckOffSettings settings;
         private FoaasAPI foaas;
 
-        public FuckOffSettings Settings { get { return this.settings; } set { this.settings = value; } }
+        public FuckOffSettings Settings
+        {
+            get
+            {
+                return this.settings;
+            }
+            set
+            {
+                this.settings = value;
+                foaas.FuckOffRecipient = settings.UserName;
+            }
+        }
 
         public string APIName
         {

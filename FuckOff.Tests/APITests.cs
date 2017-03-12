@@ -18,7 +18,8 @@ namespace FuckOff.Tests
         {
             settings = new FuckOffSettings();
             requestWrapper = new TestWebRequestWrapper();
-            foaas = new FoaasAPI(requestWrapper, "anja");
+            foaas = new FoaasAPI(requestWrapper);
+            foaas.FuckOffRecipient = "anja";
             service = new FuckOffService(settings, foaas);
         }
 

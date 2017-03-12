@@ -11,94 +11,104 @@ namespace FuckOff
     {
         private WebRequestWrapper requestWrapper;
         private Dictionary<string, string> requestDictionary;
-        private string user;
-        public string FuckOffRecipient { get { return user; } set { user = value; } }
+        private string fuckOffRecipient;
+        public string FuckOffRecipient
+        {
+            get
+            {
+                return fuckOffRecipient;
+            }
+            set
+            {
+                fuckOffRecipient = value;
+                SetUpRequestDictionary();
+            }
+        }
 
         public string BaseUrl { get { return "http://foaas.com"; } }
 
-        public FoaasAPI(WebRequestWrapper requestWrapper, string user)
+        public FoaasAPI(WebRequestWrapper requestWrapper)
         {
             this.requestWrapper = requestWrapper;
-            this.user = user;
-            SetUpRequestDictionary();
+
         }
 
         private void SetUpRequestDictionary()
         {
             requestDictionary = new Dictionary<string, string>();
-            requestDictionary.Add("awesome", BuildRequest("awesome", user));
-            requestDictionary.Add("anyway", BuildRequest("anyway", user, user));
-            requestDictionary.Add("eatABagOfDicks", BuildRequest("bag", user));
-            requestDictionary.Add("ballmer", BuildRequest("ballmer", user, user, user));
-            requestDictionary.Add("bday", BuildRequest("bday", user, user));
-            requestDictionary.Add("because", BuildRequest("because", user));
-            requestDictionary.Add("blackadder", BuildRequest("blackadder", user, user));
-            requestDictionary.Add("bm", BuildRequest("bm", user, user));
-            requestDictionary.Add("bucket", BuildRequest("bucket", user));
-            requestDictionary.Add("bus", BuildRequest("bus", user, user));
-            requestDictionary.Add("bye", BuildRequest("bye", user));
-            requestDictionary.Add("caniuse", BuildRequest("caniuse", "computer", user));
-            requestDictionary.Add("chainsaw", BuildRequest("chainsaw", user, user));
-            requestDictionary.Add("cocksplat", BuildRequest("cocksplat", user, user));
-            requestDictionary.Add("cool", BuildRequest("cool", user));
-            requestDictionary.Add("dalton", BuildRequest("dalton", user, user));
-            requestDictionary.Add("deraadt", BuildRequest("deraadt", user, user));
-            requestDictionary.Add("diabetes", BuildRequest("diabetes", user));
-            requestDictionary.Add("donut", BuildRequest("donut", user, user));
-            requestDictionary.Add("dosomething", BuildRequest("dosomething", "Just", "thing", user));
-            requestDictionary.Add("everyone", BuildRequest("everyone", user));
-            requestDictionary.Add("everything", BuildRequest("everything", user));
-            requestDictionary.Add("family", BuildRequest("family", user));
-            requestDictionary.Add("fascinating", BuildRequest("fascinating", user));
-            requestDictionary.Add("flying", BuildRequest("flying", user));
-            requestDictionary.Add("gfy", BuildRequest("gfy", user, user));
-            requestDictionary.Add("give", BuildRequest("give", user));
-            requestDictionary.Add("greed", BuildRequest("greed", "derp", user));
-            requestDictionary.Add("horse", BuildRequest("horse", user));
-            requestDictionary.Add("ing", BuildRequest("ing", user, user));
-            requestDictionary.Add("keep", BuildRequest("keep", user, user));
-            requestDictionary.Add("keepcalm", BuildRequest("keepcalm", "estimate", user));
-            requestDictionary.Add("king", BuildRequest("king", user, user));
-            requestDictionary.Add("life", BuildRequest("life", user));
-            requestDictionary.Add("linus", BuildRequest("linus", user, user));
-            requestDictionary.Add("look", BuildRequest("look", user, user));
-            requestDictionary.Add("looking", BuildRequest("looking", user));
-            requestDictionary.Add("madison", BuildRequest("madison", user, user));
-            requestDictionary.Add("maybe", BuildRequest("maybe", user));
-            requestDictionary.Add("me", BuildRequest("me", user));
-            requestDictionary.Add("mornin", BuildRequest("mornin", user));
-            requestDictionary.Add("no", BuildRequest("no", user));
-            requestDictionary.Add("nugget", BuildRequest("nugget", user, user));
-            requestDictionary.Add("off", BuildRequest("off", user, user));
-            requestDictionary.Add("offWith", BuildRequest("off-with", "påhållning", user));
-            requestDictionary.Add("outside", BuildRequest("outside", user, user));
-            requestDictionary.Add("particular", BuildRequest("particular", "computer", user));
-            requestDictionary.Add("pink", BuildRequest("pink", user));
-            requestDictionary.Add("problem", BuildRequest("problem", user, user));
-            requestDictionary.Add("pulp", BuildRequest("pulp", "Programming", user));
-            requestDictionary.Add("retard", BuildRequest("retard", user));
-            requestDictionary.Add("ridiculous", BuildRequest("ridiculous", user));
-            requestDictionary.Add("rtfm", BuildRequest("rtfm", user));
-            requestDictionary.Add("sake", BuildRequest("sake", user));
-            requestDictionary.Add("shakespeare", BuildRequest("shakespeare", user, user));
-            requestDictionary.Add("shit", BuildRequest("shit", user));
-            requestDictionary.Add("shutup", BuildRequest("shutup", user, user));
-            requestDictionary.Add("single", BuildRequest("single", user));
-            requestDictionary.Add("thanks", BuildRequest("thanks", user));
-            requestDictionary.Add("that", BuildRequest("that", user));
-            requestDictionary.Add("think", BuildRequest("think", user, user));
-            requestDictionary.Add("thinking", BuildRequest("thinking", user, user));
-            requestDictionary.Add("this", BuildRequest("this", user));
-            requestDictionary.Add("thumbs", BuildRequest("thumbs", user, user));
-            requestDictionary.Add("too", BuildRequest("too", user));
-            requestDictionary.Add("tucker", BuildRequest("tucker", user));
+            requestDictionary.Add("awesome", BuildRequest("awesome", fuckOffRecipient));
+            requestDictionary.Add("anyway", BuildRequest("anyway", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("eatABagOfDicks", BuildRequest("bag", fuckOffRecipient));
+            requestDictionary.Add("ballmer", BuildRequest("ballmer", fuckOffRecipient, fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("bday", BuildRequest("bday", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("because", BuildRequest("because", fuckOffRecipient));
+            requestDictionary.Add("blackadder", BuildRequest("blackadder", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("bm", BuildRequest("bm", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("bucket", BuildRequest("bucket", fuckOffRecipient));
+            requestDictionary.Add("bus", BuildRequest("bus", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("bye", BuildRequest("bye", fuckOffRecipient));
+            requestDictionary.Add("caniuse", BuildRequest("caniuse", "computer", fuckOffRecipient));
+            requestDictionary.Add("chainsaw", BuildRequest("chainsaw", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("cocksplat", BuildRequest("cocksplat", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("cool", BuildRequest("cool", fuckOffRecipient));
+            requestDictionary.Add("dalton", BuildRequest("dalton", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("deraadt", BuildRequest("deraadt", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("diabetes", BuildRequest("diabetes", fuckOffRecipient));
+            requestDictionary.Add("donut", BuildRequest("donut", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("dosomething", BuildRequest("dosomething", "Just", "thing", fuckOffRecipient));
+            requestDictionary.Add("everyone", BuildRequest("everyone", fuckOffRecipient));
+            requestDictionary.Add("everything", BuildRequest("everything", fuckOffRecipient));
+            requestDictionary.Add("family", BuildRequest("family", fuckOffRecipient));
+            requestDictionary.Add("fascinating", BuildRequest("fascinating", fuckOffRecipient));
+            requestDictionary.Add("flying", BuildRequest("flying", fuckOffRecipient));
+            requestDictionary.Add("gfy", BuildRequest("gfy", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("give", BuildRequest("give", fuckOffRecipient));
+            requestDictionary.Add("greed", BuildRequest("greed", "derp", fuckOffRecipient));
+            requestDictionary.Add("horse", BuildRequest("horse", fuckOffRecipient));
+            requestDictionary.Add("ing", BuildRequest("ing", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("keep", BuildRequest("keep", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("keepcalm", BuildRequest("keepcalm", "estimate", fuckOffRecipient));
+            requestDictionary.Add("king", BuildRequest("king", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("life", BuildRequest("life", fuckOffRecipient));
+            requestDictionary.Add("linus", BuildRequest("linus", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("look", BuildRequest("look", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("looking", BuildRequest("looking", fuckOffRecipient));
+            requestDictionary.Add("madison", BuildRequest("madison", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("maybe", BuildRequest("maybe", fuckOffRecipient));
+            requestDictionary.Add("me", BuildRequest("me", fuckOffRecipient));
+            requestDictionary.Add("mornin", BuildRequest("mornin", fuckOffRecipient));
+            requestDictionary.Add("no", BuildRequest("no", fuckOffRecipient));
+            requestDictionary.Add("nugget", BuildRequest("nugget", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("off", BuildRequest("off", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("offWith", BuildRequest("off-with", "påhållning", fuckOffRecipient));
+            requestDictionary.Add("outside", BuildRequest("outside", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("particular", BuildRequest("particular", "computer", fuckOffRecipient));
+            requestDictionary.Add("pink", BuildRequest("pink", fuckOffRecipient));
+            requestDictionary.Add("problem", BuildRequest("problem", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("pulp", BuildRequest("pulp", "Programming", fuckOffRecipient));
+            requestDictionary.Add("retard", BuildRequest("retard", fuckOffRecipient));
+            requestDictionary.Add("ridiculous", BuildRequest("ridiculous", fuckOffRecipient));
+            requestDictionary.Add("rtfm", BuildRequest("rtfm", fuckOffRecipient));
+            requestDictionary.Add("sake", BuildRequest("sake", fuckOffRecipient));
+            requestDictionary.Add("shakespeare", BuildRequest("shakespeare", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("shit", BuildRequest("shit", fuckOffRecipient));
+            requestDictionary.Add("shutup", BuildRequest("shutup", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("single", BuildRequest("single", fuckOffRecipient));
+            requestDictionary.Add("thanks", BuildRequest("thanks", fuckOffRecipient));
+            requestDictionary.Add("that", BuildRequest("that", fuckOffRecipient));
+            requestDictionary.Add("think", BuildRequest("think", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("thinking", BuildRequest("thinking", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("this", BuildRequest("this", fuckOffRecipient));
+            requestDictionary.Add("thumbs", BuildRequest("thumbs", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("too", BuildRequest("too", fuckOffRecipient));
+            requestDictionary.Add("tucker", BuildRequest("tucker", fuckOffRecipient));
             requestDictionary.Add("version", BuildRequest("version"));
-            requestDictionary.Add("what", BuildRequest("what", user));
-            requestDictionary.Add("xmas", BuildRequest("xmas", user, user));
-            requestDictionary.Add("yoda", BuildRequest("yoda", user, user));
-            requestDictionary.Add("you", BuildRequest("you", user, user));
-            requestDictionary.Add("zayn", BuildRequest("zayn", user));
-            requestDictionary.Add("zero", BuildRequest("zero", user));
+            requestDictionary.Add("what", BuildRequest("what", fuckOffRecipient));
+            requestDictionary.Add("xmas", BuildRequest("xmas", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("yoda", BuildRequest("yoda", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("you", BuildRequest("you", fuckOffRecipient, fuckOffRecipient));
+            requestDictionary.Add("zayn", BuildRequest("zayn", fuckOffRecipient));
+            requestDictionary.Add("zero", BuildRequest("zero", fuckOffRecipient));
         }
 
         internal async Task<string> GetRandomFuckOffMessage()

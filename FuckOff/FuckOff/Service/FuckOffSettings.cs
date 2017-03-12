@@ -4,7 +4,12 @@
 
     public class FuckOffSettings 
     {
-        public string UserName { get; set; }
+        private string userName;
+        public string UserName
+        {
+            get { return string.IsNullOrWhiteSpace(userName) ? "Mr FuckFace" : userName; }
+            set { userName = value; }
+        }
         public int FuckOffCounter { get; set; }
     }
 

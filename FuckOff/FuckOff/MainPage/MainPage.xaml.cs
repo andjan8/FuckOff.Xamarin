@@ -41,6 +41,9 @@ namespace FuckOff
         public async void Return()
         {
             await Navigation.PopAsync();
+            //this makes eventual changes go all the way down to wherevere they are needed, specifically to update the username in the api.
+            //works but not very elegant:)
+            this.service.Settings = this.service.Settings;
         }
     }
 }

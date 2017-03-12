@@ -16,7 +16,7 @@ namespace FuckOff
         public App()
         {
 
-            fuckOffService = new FuckOffService(new FuckOffSettings(), new FoaasAPI(new WebRequestWrapper(), "anja"));
+            fuckOffService = new FuckOffService(new FuckOffSettings(), new FoaasAPI(new WebRequestWrapper()));
             mainPage = new MainPage(new MainPageViewModel(fuckOffService));
             MainPage = new NavigationPage(mainPage);
         }
