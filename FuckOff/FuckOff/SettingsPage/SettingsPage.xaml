@@ -27,7 +27,10 @@
         <Label
           Text="Your Name:"
           Grid.Row="0"
-          Grid.Column="0"/>
+          Grid.Column="0"
+          FontSize="Medium"
+          VerticalTextAlignment="Center"
+          HorizontalTextAlignment="Start"/>
 
         <Entry
           Text="{Binding UserName}"
@@ -38,12 +41,18 @@
         <Label
         Text="Fuckoff counter:"
         Grid.Row="1"
-        Grid.Column="0"/>
+        Grid.Column="0"
+        FontSize="Medium"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Start"/>
 
         <Label
         Text="{Binding FuckoffCounter}"
         Grid.Row="1"
-        Grid.Column="1"/>
+        Grid.Column="1"
+        FontSize="Medium"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Start"/>
 
         <Button 
           Text="Reset Counter"
